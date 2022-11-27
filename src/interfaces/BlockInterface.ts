@@ -1,4 +1,5 @@
 import {RatesInterface} from "./RatesInterface";
+import {Dispatch, SetStateAction} from "react";
 
 export interface BlockInterface {
   value: number;
@@ -7,4 +8,6 @@ export interface BlockInterface {
   onChangeCurrency: (currency: string) => void;
   currencyTitle?: string;
   currencies?: RatesInterface;
+  isModalOpen: boolean;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }

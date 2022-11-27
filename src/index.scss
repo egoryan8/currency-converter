@@ -1,5 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
 
+#root {
+  width: 90vw;
+  min-height: 90vh;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
 body {
   background-color: #3291ce;
   display: flex;
@@ -104,7 +111,7 @@ body {
   flex-direction: column;
   overflow-y: scroll;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 5px;
   li {
     display: block;
@@ -141,9 +148,16 @@ body {
 .header {
   color: rgba(255, 255, 255, 0.9);
   margin: 0 auto;
-  padding: 0 0 10px;
   width: fit-content;
   font-size: 26px;
   text-transform: uppercase;
   letter-spacing: .1rem;
+}
+
+.arrow {
+  transition: transform .4s ease;
+}
+
+.up {
+  transform: rotate(180deg);
 }

@@ -1,0 +1,82 @@
+.wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.rates {
+  padding: 0;
+  border-radius: 10px;
+  background: white;
+  min-height: 70vh;
+  list-style: none;
+  overflow: hidden;
+}
+
+.baseCurrency {
+  margin-top: 20px;
+  width: auto;
+  display: flex;
+  align-items: center;
+
+  ul {
+    background: white;
+    border-radius: 5px;
+    height: fit-content;
+    border: none;
+  }
+
+  h2 {
+    white-space: nowrap;
+    margin-right: 20px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+}
+
+.rateItem {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
+  div {
+    border: 1px solid rgba(1, 1, 1, 0.1);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.ratesHeadings {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+
+  div {
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    font-weight: 700;
+    background-color: #2e8d6d;
+    color: white;
+    display: flex;
+    align-items: center;
+  }
+
+  div:last-of-type {
+    border: none;
+  }
+}
+
+.pickBase {
+  width: fit-content;
+  font-size: 32px;
+  font-weight: 500;
+  margin: 200px auto;
+}
+
+.modal {
+  width: 50%;
+  left: 0;
+  top: 119px;
+}
