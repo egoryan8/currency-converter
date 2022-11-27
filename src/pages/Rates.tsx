@@ -3,6 +3,7 @@ import styles from './rates.module.scss';
 import {RatesInterface} from "../interfaces/RatesInterface";
 import RatesItem from "../components/RatesItem";
 import Modal from "../components/Modal";
+import Header from "../components/Header";
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'UAH'];
 
@@ -11,7 +12,6 @@ const Rates: React.FC = () => {
   const [modalIsOpened, setModalIsOpened] = useState(false);
   const [baseValue, setBaseValue] = useState(0);
   const ratesRef = useRef<RatesInterface>({});
-
   const ratesArray = Object.values(ratesRef.current);
 
   useEffect(() => {
@@ -19,7 +19,6 @@ const Rates: React.FC = () => {
       .then(res => res.json())
       .then(res => {
         ratesRef.current = res.Valute;
-        console.log(ratesRef.current);
       })
       .catch(err => {
         console.warn(err);
@@ -34,7 +33,7 @@ const Rates: React.FC = () => {
 
   return (
     <div className={styles.wrapper}>
-      <h1 className="header">Курсы валют</h1>
+      <Header/>
       <div className={styles.baseCurrency}>
         <h2>Базовая валюта: </h2>
         <ul className="currencies">

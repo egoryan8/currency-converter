@@ -1,17 +1,17 @@
 import React, {DetailedHTMLProps, Dispatch, HTMLAttributes, SetStateAction} from 'react';
 import {motion} from "framer-motion";
 import cn from 'classnames';
+import {ModalInterface} from "../interfaces/ModalInterface";
 
-export interface ModalInterface extends DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>{
-  currency: string;
-  onChangeValue?: (value: number) => void;
-  onChangeCurrency: (currency: string) => void;
-  modalIsOpened: boolean;
-  setModalIsOpened: Dispatch<SetStateAction<boolean>>;
-  currenciesArr: string[];
-}
-
-const Modal: React.FC<ModalInterface> = ({currenciesArr, onChangeCurrency, modalIsOpened, setModalIsOpened, currency, className}) => {
+const Modal: React.FC<ModalInterface>
+  = ({
+       currenciesArr,
+       onChangeCurrency,
+       modalIsOpened,
+       setModalIsOpened,
+       currency,
+       className
+  }) => {
   const variants = {
     closed: {
       height: 0,

@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {RatesInterface} from "../interfaces/RatesInterface";
 import {Block} from "../components/Block";
+import Header from "../components/Header";
 
 const Converter: React.FC = () => {
   const [fromCurrency, setFromCurrency] = useState('USD');
@@ -59,7 +60,7 @@ const Converter: React.FC = () => {
   // @ts-ignore
   return (
     <>
-      <h1 className="header">Конвертер валют</h1>
+      <Header/>
       <div className="App">
         <Block
           value={fromPrice}

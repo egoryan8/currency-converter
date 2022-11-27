@@ -17,6 +17,8 @@
   width: auto;
   display: flex;
   align-items: center;
+  position: relative;
+  z-index: 10;
 
   ul {
     background: white;
@@ -78,5 +80,5 @@
 .modal {
   width: 50%;
   left: 0;
-  top: 119px;
+  top: 155px;
 }
