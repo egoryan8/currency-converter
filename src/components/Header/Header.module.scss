@@ -1,0 +1,49 @@
+.wrapper {
+  margin: 20px auto 0;
+  display: flex;
+  align-items: center;
+  width: 700px;
+  justify-content: space-between;
+
+  .link {
+    text-decoration: none;
+    transition: opacity 0.5s ease-out;
+    &:hover {
+      text-decoration: underline 3px solid white;
+      opacity: 0.6;
+    }
+  }
+}
+
+.heading {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  width: fit-content;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+}
+
+.ghLink {
+  text-decoration: none;
+  transition: opacity 0.5s linear;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  svg {
+    margin-right: 10px;
+  }
+
+  h2 {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000000;
+  }
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

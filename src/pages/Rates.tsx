@@ -1,9 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
-import styles from './rates.module.scss';
+import styles from '../styles/rates.module.scss';
 import {RatesInterface} from "../interfaces/RatesInterface";
-import RatesItem from "../components/RatesItem";
+import RatesItem from "../components/RatesItem/RatesItem";
 import Modal from "../components/Modal";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
+import cn from "classnames";
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'UAH'];
 
@@ -40,13 +41,17 @@ const Rates: React.FC = () => {
           {defaultCurrencies.map((cur) => (
             <li
               onClick={() => onChangeBaseCur(cur)}
-              className={baseCurrency === cur ? 'active' : ''}
+              className={cn({
+                'active': baseCurrency === cur,
+              })}
               key={cur}>
               {cur}
             </li>
           ))}
           <li onClick={() => setModalIsOpened(!modalIsOpened)}>
-            <svg height="50px" viewBox="0 0 50 50" width="50px" className={modalIsOpened ? 'arrow up' : 'arrow'}>
+            <svg height="50px" viewBox="0 0 50 50" width="50px" className={cn("arrow", {
+              "up": modalIsOpened,
+            })}>
               <rect fill="none" height="50" width="50"/>
               <polygon points="47.25,15 45.164,12.914 25,33.078 4.836,12.914 2.75,15 25,37.25 "/>
             </svg>
@@ -63,7 +68,7 @@ const Rates: React.FC = () => {
       />
       <ul className={styles.rates}>
         <li className={styles.ratesHeadings}>
-          <div>Знак валюты</div>
+          <div>Знак валюты, 1 ед.</div>
           <div>Полное наименование валюты</div>
           <div>Курс к базовой валюте&nbsp;
             {baseCurrency && <span>({baseCurrency})</span>}
@@ -73,7 +78,7 @@ const Rates: React.FC = () => {
           ratesArray.length > 0 && baseCurrency
             ? ratesArray.map(i =>
               <RatesItem
-                key={i.CharCode}
+                key={i.ID}
                 char={i.CharCode}
                 name={i.Name}
                 value={i.Value / i.Nominal}

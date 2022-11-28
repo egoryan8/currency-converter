@@ -1,4 +1,4 @@
-import React, {DetailedHTMLProps, Dispatch, HTMLAttributes, SetStateAction} from 'react';
+import React from 'react';
 import {motion} from "framer-motion";
 import cn from 'classnames';
 import {ModalInterface} from "../interfaces/ModalInterface";

@@ -1,7 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {RatesInterface} from "../interfaces/RatesInterface";
-import {Block} from "../components/Block";
-import Header from "../components/Header";
+import {Block} from "../components/Block/Block";
+import Header from "../components/Header/Header";
 
 const Converter: React.FC = () => {
   const [fromCurrency, setFromCurrency] = useState('USD');
@@ -57,11 +57,10 @@ const Converter: React.FC = () => {
     setToPrice(result);
     setFromPrice(value);
   };
-  // @ts-ignore
   return (
     <>
       <Header/>
-      <div className="App">
+      <div className="converter">
         <Block
           value={fromPrice}
           currency={fromCurrency}
@@ -72,11 +71,11 @@ const Converter: React.FC = () => {
           isModalOpen={isModalOpen}
           setIsModalOpen={setIsModalOpen}
         />
-          <svg version="1.1" x="0px" y="0px" viewBox="0 0 96 96">
-            <path d="M12,52h62.344L53.172,73.172c-1.562,1.562-1.562,4.094,0,5.656c1.562,1.562,4.095,1.562,5.657,0l28-28
+        <svg version="1.1" x="0px" y="0px" viewBox="0 0 96 96">
+          <path d="M12,52h62.344L53.172,73.172c-1.562,1.562-1.562,4.094,0,5.656c1.562,1.562,4.095,1.562,5.657,0l28-28
 			      c1.562-1.562,1.562-4.095,0-5.656l-28-28C58.048,16.391,57.024,16,56,16c-1.023,0-2.047,0.391-2.828,1.172
 			      c-1.562,1.562-1.562,4.095,0,5.656L74.344,44H12c-2.209,0-4,1.791-4,4S9.791,52,12,52z"/>
-          </svg>
+        </svg>
         <Block
           value={Math.floor(toPrice * 100) / 100}
           currency={toCurrency}

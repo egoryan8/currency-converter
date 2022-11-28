@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from '../pages/rates.module.scss';
-import {RatesItemInterface} from "../interfaces/RatesItemInterface";
+import {RatesItemInterface} from "../../interfaces/RatesItemInterface";
+import styles from './RatesItem.module.scss';
 
 const RatesItem: React.FC<RatesItemInterface> = ({char, name, value, baseValue}) => {
-  const valueF = value / baseValue;
+  const finalValue = value / baseValue;
   return (
-    <li className={styles.rateItem}>
+    <li className={styles.item}>
       <div>
         {char}
       </div>
@@ -13,7 +13,7 @@ const RatesItem: React.FC<RatesItemInterface> = ({char, name, value, baseValue})
         {name}
       </div>
       <div>
-        {valueF.toFixed(4)}
+        {finalValue.toFixed(4)}
       </div>
     </li>
   );
