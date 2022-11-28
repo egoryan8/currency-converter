@@ -51,6 +51,7 @@ export const Block: React.FC<BlockInterface>
         value={value}
         type="number"
         placeholder={'0'}
+        max="10"
       />
       <Modal currency={currency} onChangeCurrency={onChangeCurrency} modalIsOpened={modalIsOpened} setModalIsOpened={setModalIsOpened} currenciesArr={currenciesArr}/>
     </div>

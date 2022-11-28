@@ -7,18 +7,24 @@
 
   .link {
     text-decoration: none;
+    color: black;
     transition: opacity 0.5s ease-out;
     &:hover {
-      text-decoration: underline 3px solid white;
+      text-decoration: underline 3px solid rgba(0, 0, 0, 0.6);
       opacity: 0.6;
     }
   }
-
+  .activeLink {
+    h2 {
+      color: white;
+    }
+    text-decoration: underline 3px solid white;
+  }
 
 }
 
 .heading {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.9);
   margin: 0 auto;
   width: fit-content;
   font-size: 22px;
@@ -50,6 +56,12 @@
   }
 }
 
+.linkActive {
+  h2 {
+    color: black;
+  }
+}
+
 @media (max-width: 991px) {
 
   .heading {
@@ -69,6 +81,19 @@
   .heading {
     font-size: 14px;
     max-width: 100px;
+    text-align: center;
+  }
+
+  .ghLink {
+    h2 {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 440px) {
+  .heading {
+    font-size: 12px;
     text-align: center;
   }
 

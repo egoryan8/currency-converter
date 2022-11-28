@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
+import {motion} from 'framer-motion';
 import i18n from "../../i18n";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import {useTranslation} from "react-i18next";
 import cn from "classnames";
 import styles from './Language.module.scss';
+
 import "/node_modules/flag-icons/css/flag-icons.min.css";
-import {motion} from 'framer-motion';
 
 const Language = () => {
   const [language, setLanguage] = useLocalStorage('language', 'ru');
