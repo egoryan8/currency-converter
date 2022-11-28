@@ -5,10 +5,13 @@ import RatesItem from "../components/RatesItem/RatesItem";
 import Modal from "../components/Modal";
 import Header from "../components/Header/Header";
 import cn from "classnames";
+import {useTranslation} from "react-i18next";
 
 const defaultCurrencies = ['RUB', 'USD', 'EUR', 'UAH'];
 
 const Rates: React.FC = () => {
+  // @ts-ignore
+  const {t} = useTranslation();
   const [baseCurrency, setBaseCurrency] = useState('');
   const [modalIsOpened, setModalIsOpened] = useState(false);
   const [baseValue, setBaseValue] = useState(0);
@@ -36,7 +39,7 @@ const Rates: React.FC = () => {
     <div className={styles.wrapper}>
       <Header/>
       <div className={styles.baseCurrency}>
-        <h2>Базовая валюта: </h2>
+        <h2>{t('baseCurrency')}</h2>
         <ul className="currencies">
           {defaultCurrencies.map((cur) => (
             <li
@@ -68,9 +71,9 @@ const Rates: React.FC = () => {
       />
       <ul className={styles.rates}>
         <li className={styles.ratesHeadings}>
-          <div>Знак валюты, 1 ед.</div>
-          <div>Полное наименование валюты</div>
-          <div>Курс к базовой валюте&nbsp;
+          <div>{t('char')}</div>
+          <div>{t('fullName')}</div>
+          <div>{t('rateToBase')}&nbsp;
             {baseCurrency && <span>({baseCurrency})</span>}
           </div>
         </li>
@@ -84,7 +87,7 @@ const Rates: React.FC = () => {
                 value={i.Value / i.Nominal}
                 baseValue={baseValue}
               />)
-            : <li className={styles.pickBase}>Выберете базовую валюту</li>
+            : <li className={styles.pickBase}>{t('pickBase')}</li>
         }
       </ul>
     </div>

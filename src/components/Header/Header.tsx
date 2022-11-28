@@ -1,18 +1,23 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import styles from './Header.module.scss';
+import {useTranslation} from "react-i18next";
+import Language from "../Language/Language";
 
 const Header = React.memo(() => {
+  // @ts-ignore
+  const {t} = useTranslation();
   return (
     <div className={styles.wrapper}>
+      <Language/>
       <Link to="/" className={styles.link}>
         <h2 className={styles.heading}>
-          Курсы валют
+          {t('rates')}
         </h2>
       </Link>
       <Link to="/converter" className={styles.link}>
         <h2 className={styles.heading}>
-          Конвертер валют
+          {t('converter')}
         </h2>
       </Link>
       <a href='https://github.com/egoryan8' target="_blank" className={styles.ghLink}>

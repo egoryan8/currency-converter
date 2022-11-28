@@ -37,8 +37,6 @@
   }
 }
 
-
-
 .ratesHeadings {
   display: grid;
   width: 100%;
@@ -64,6 +62,8 @@
   font-size: 32px;
   font-weight: 500;
   margin: 200px auto;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .modal {
@@ -72,11 +72,33 @@
   top: 155px;
 }
 
-.arrow {
-  transition: transform .4s ease;
+@media (max-width: 650px) {
+  .ratesHeadings {
+    div {
+      text-align: center;
+      font-size: 12px;
+      overflow-wrap: anywhere;
+      padding: 10px 5px;
+      font-weight: 600;
+      span {
+        display: none;
+      }
+    }
+  }
+
+  .baseCurrency {
+    flex-direction: column;
+
+    h2 {
+      font-size: 14px;
+    }
+  }
+
+  .modal {
+    top: 180px;
+    width: 100%;
+  }
 }
 
-.up {
-  transform: rotate(180deg);
-}
+
 

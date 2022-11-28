@@ -2,7 +2,7 @@
   margin: 20px auto 0;
   display: flex;
   align-items: center;
-  width: 700px;
+  max-width: 1000px;
   justify-content: space-between;
 
   .link {
@@ -13,6 +13,8 @@
       opacity: 0.6;
     }
   }
+
+
 }
 
 .heading {
@@ -45,5 +47,34 @@
 
   &:hover {
     opacity: 0.5;
+  }
+}
+
+@media (max-width: 991px) {
+
+  .heading {
+    font-size: 18px;
+  }
+
+  .ghLink {
+    h2 {
+      display: none;
+    }
+  }
+}
+
+
+@media (max-width: 650px) {
+
+  .heading {
+    font-size: 14px;
+    max-width: 100px;
+    text-align: center;
+  }
+
+  .ghLink {
+    h2 {
+      display: none;
+    }
   }
 }

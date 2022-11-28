@@ -10,3 +10,13 @@
     align-items: center;
   }
 }
+
+@media (max-width: 650px) {
+
+  .item {
+
+    div {
+      overflow-wrap: anywhere;
+    }
+  }
+}
