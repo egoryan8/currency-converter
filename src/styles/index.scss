@@ -4,7 +4,6 @@
   width: 90vw;
   min-height: 90vh;
   margin: 0 auto;
-  min-width: 425px;
 }
 
 body {
@@ -13,7 +12,6 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  min-width: 425px;
 }
 
 * {
@@ -146,6 +144,22 @@ body {
   }
 }
 
+@media (max-width: 440px) {
+  .converter {
+    padding: 20px;
+  }
+
+  .modal-currencies {
+    top: 85px;
+  }
+
+  .currencies {
+    li {
+      padding: 5px;
+      font-size: 14px;
+    }
+  }
+}
 
 
 
