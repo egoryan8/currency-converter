@@ -4,7 +4,7 @@ import Modal from "../Modal";
 import styles from './Block.module.scss';
 import cn from "classnames";
 
-const defaultCurrencies = ['RUB', 'USD', 'EUR', 'UAH'];
+const defaultCurrencies = ['RUB', 'USD', 'EUR'];
 
 export const Block: React.FC<BlockInterface>
   = ({
