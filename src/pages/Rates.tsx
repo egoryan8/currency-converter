@@ -7,7 +7,7 @@ import Header from "../components/Header/Header";
 import cn from "classnames";
 import {useTranslation} from "react-i18next";
 
-const defaultCurrencies = ['RUB', 'USD', 'EUR', 'UAH'];
+const defaultCurrencies = ['RUB', 'USD', 'EUR'];
 
 const Rates: React.FC = () => {
   // @ts-ignore
